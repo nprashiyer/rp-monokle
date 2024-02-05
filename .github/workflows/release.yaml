@@ -22,5 +22,4 @@ jobs:
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
           monorepo-tags: true
-          pull-request-title-pattern: "chore${scope}: release${component} ${version}"
           skip-github-release: true
