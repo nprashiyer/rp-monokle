@@ -1,1 +1,1 @@
-version ones mijor
+version ones minor
