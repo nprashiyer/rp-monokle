@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/nprashiyer/rp-monokle/compare/v1.4.0...v1.4.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* minor a changes ([99a777c](https://github.com/nprashiyer/rp-monokle/commit/99a777cc0e4025047da0965032175bffae5192f2))
+
 ## [1.4.0](https://github.com/nprashiyer/rp-monokle/compare/v1.3.0...v1.4.0) (2024-02-05)
 
 
