@@ -1,2 +1,2 @@
 # rp-monokle
-initial
+initial 0.0.1
