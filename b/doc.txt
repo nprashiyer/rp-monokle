@@ -1,1 +1,1 @@
-version six
+version six major
