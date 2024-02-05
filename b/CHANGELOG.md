@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/nprashiyer/rp-monokle/compare/v1.3.0...v1.3.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* moniro b 131 ([ee07b7f](https://github.com/nprashiyer/rp-monokle/commit/ee07b7f59927d89487a352e3644814ad361e5047))
+
 ## [1.3.0](https://github.com/nprashiyer/rp-monokle/compare/v1.2.0...v1.3.0) (2024-02-05)
 
 
