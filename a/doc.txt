@@ -1,1 +1,1 @@
-version ones major a
+version ones minor a
