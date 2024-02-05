@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/nprashiyer/rp-monokle/compare/v1.1.2...v1.2.0) (2024-02-05)
+
+
+### Features
+
+* major ([ef1dd6e](https://github.com/nprashiyer/rp-monokle/commit/ef1dd6ea6552c0d2211195ab2d2c341db5340a99))
+
 ## [1.1.2](https://github.com/nprashiyer/rp-monokle/compare/v1.1.1...v1.1.2) (2024-02-05)
 
 
