@@ -1,6 +1,10 @@
 {
     "packages": {
-      "a": {},
-      "b": {}
+      "a": {
+        "release-type": "simple"
+      },
+      "b": {
+        "release-type": "simple"
+      }
     }
   }
