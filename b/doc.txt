@@ -1,1 +1,1 @@
-version six major
+version six major minoe
