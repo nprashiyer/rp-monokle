@@ -22,4 +22,4 @@ jobs:
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
           monorepo-tags: true
-          command: manifest
+          release-type: simple
