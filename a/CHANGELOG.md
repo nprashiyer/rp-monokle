@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/nprashiyer/rp-monokle/compare/v1.1.0...v1.1.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* ine ([fa5bb1b](https://github.com/nprashiyer/rp-monokle/commit/fa5bb1b09656f08cf7120526f2a955d713f5de53))
+
 ## [1.1.0](https://github.com/nprashiyer/rp-monokle/compare/v1.0.0...v1.1.0) (2024-02-05)
 
 
