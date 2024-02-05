@@ -1,1 +1,1 @@
-version inits
+version init
