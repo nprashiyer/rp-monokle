@@ -25,5 +25,5 @@ jobs:
           monorepo-tags: true
           skip-github-release: true
       - name: Checkout repository
-        if: ${{ !steps.release.outputs.releases_created }}
+        if: ${{ ! steps.release.outputs.releases_created }}
         run: echo Hi
