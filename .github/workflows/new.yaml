@@ -14,4 +14,4 @@ jobs:
     needs: triage
     runs-on: ubuntu-latest
     steps:
-    - run: cat > myrd.txt
+    - run: cat myrd.txt
