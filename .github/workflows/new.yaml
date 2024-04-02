@@ -4,9 +4,12 @@ on:
 
 jobs:
   triage:
+    runs-on: ubuntu-latest
     steps:
     - run: echo "prashant" > myrd.txt
   
   new:
+    needs: triage
+    runs-on: ubuntu-latest
     steps:
     - run: cat > myrd.txt
