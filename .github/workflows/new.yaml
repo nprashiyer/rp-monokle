@@ -1,0 +1,12 @@
+name: "Pull request labeler"
+on:
+  push:
+
+jobs:
+  triage:
+    steps:
+    - run: echo "prashant" > myrd.txt
+  
+  new:
+    steps:
+    - run: cat > myrd.txt
