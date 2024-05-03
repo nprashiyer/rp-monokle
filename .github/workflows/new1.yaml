@@ -1,0 +1,15 @@
+name: Manual Deployment
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Hola
+        run: echo HOLA !!
