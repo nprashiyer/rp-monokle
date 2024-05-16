@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
     branches:
       - main
+    inputs:
+      demo:
+        description: random input
+        type: string
+        required: false
 
 jobs:
   deploy:
@@ -12,4 +17,5 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Hola
+        if: ${{ inputs.demo != '' }}
         run: echo HOLA !!
