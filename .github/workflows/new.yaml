@@ -1,6 +1,6 @@
 name: "Pull request labeler"
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   triage:

@@ -1,4 +1,4 @@
-name: Manual Deployment
+name: Checkbox
 
 on:
   workflow_dispatch:
@@ -7,8 +7,11 @@ on:
     inputs:
       demo:
         description: random input
-        type: string
-        required: false
+        type: choice
+        default: "[ ] Item 1"
+        options:
+          - "[x] Item 1"
+          - "[ ] Item 1"
 
 jobs:
   deploy:
