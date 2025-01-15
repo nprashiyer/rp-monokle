@@ -6,8 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event.client_payload.target_workflow == 'new2' 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Hola
-        run: echo HOLA !!
+        run: echo HOLA NEW2 !!
