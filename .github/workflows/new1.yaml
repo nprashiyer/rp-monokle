@@ -1,6 +1,7 @@
 name: Checkbox
 
 on:
+  repository_dispatch:
   workflow_dispatch:
     branches:
       - main
@@ -20,5 +21,4 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Hola
-        if: ${{ inputs.demo != '' }}
         run: echo HOLA !!
