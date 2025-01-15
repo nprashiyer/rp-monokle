@@ -2,6 +2,7 @@ name: RepoDispa
 
 on:
   repository_dispatch:
+  workflow_dispatch:
 
 jobs:
   deploy:
