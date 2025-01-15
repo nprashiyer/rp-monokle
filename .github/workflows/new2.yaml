@@ -1,10 +1,7 @@
-name: Checkbox
+name: RepoDispa
 
 on:
   repository_dispatch:
-  workflow_dispatch:
-    branches:
-      - main
 
 jobs:
   deploy:
