@@ -4,7 +4,7 @@ This list the service versions corresponding to each release
 | Service | alpha | beta | charlie | delta | echo | foxtrot |
 | - | - | - | - | - | - | - |
 | cart-service | 0.1.0 | 0.1.0 | 0.1.0 | 0.2.2 | 0.3.0 | 0.3.0 |
-| db-service | 0.1.0 | 0.1.0 | 0.2.0 | 0.3.0 | 0.3.0 | 0.5.1 |
+| db-service | 0.1.0 | 0.1.0 | 0.2.0 | 0.3.0 | 0.3.0 | 0.5.2 |
 | notification-service | 0.1.0 | 0.2.1 | 0.2.0 | 0.2.0 | 0.2.1 | 0.3.0 |
 | pay-service | 0.1.1 | 0.1.0 | 0.1.1 | 0.2.0 | 0.2.1 | 0.2.1 |
 | region-service | - | - | - | - | 0.1.0 | 0.2.0 |
