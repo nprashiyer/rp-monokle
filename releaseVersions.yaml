@@ -14,7 +14,7 @@ search-service:
   alpha: 0.1.0
   beta: 0.1.1
   charlie: 0.3.0
-  delta: 0.2.1
+  delta: 0.3.0
   echo: 0.1.0
 notification-service:
   alpha: 0.1.0
