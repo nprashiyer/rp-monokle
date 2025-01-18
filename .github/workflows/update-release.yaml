@@ -26,7 +26,7 @@ jobs:
 
       - name: Run service update script
         run: |
-          
+          python3 <<EOF
           import yaml
 
           def read_versions():
@@ -98,6 +98,8 @@ jobs:
 
           if __name__ == "__main__":
               main()
+          
+          EOF
 
       - name: Display readme
         run: cat README.md
