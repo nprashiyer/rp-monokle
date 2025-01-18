@@ -1,0 +1,97 @@
+name: Update Versions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ./releaseVersions.yaml
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run service update script
+        run: |
+          
+          import yaml
+
+          def read_versions():
+              """Reads the releaseVersions.yaml file and returns its content as a dictionary."""
+              with open("releaseVersions.yaml", "r") as file:
+                  return yaml.safe_load(file)
+
+          def generate_table(versions):
+              """Generates the table content for the services based on the YAML data."""
+              # Extract all unique stages (columns)
+              all_stages = set()
+              for service, stages in versions.items():
+                  all_stages.update(stages.keys())
+              sorted_stages = sorted(all_stages)
+
+              # Extract all services
+              all_services = set(versions.keys())
+
+              # Create table header and divider
+              table_header = "| Service | " + " | ".join(sorted_stages) + " |\n"
+              table_divider = "| - " + "| - " * len(sorted_stages) + "|\n"
+
+              # Create table rows
+              table_rows = []
+              for service in sorted(all_services):
+                  stages = versions.get(service, {})
+                  row = f"| {service} | " + " | ".join(stages.get(stage, "-") for stage in sorted_stages) + " |"
+                  table_rows.append(row)
+
+              return table_header + table_divider + "\n".join(table_rows) + "\n"
+
+          def update_service_version_section(readme_content, table_content):
+              """Replaces the ### Service Version section in the README with the updated table."""
+              updated_content = []
+              inside_service_version_section = False
+
+              for line in readme_content:
+                  if line.strip() == "### Service Version":
+                      # Start updating the Service Version section
+                      updated_content.append(line)
+                      updated_content.append(table_content)
+                      inside_service_version_section = True
+                  elif inside_service_version_section and line.startswith("###"):
+                      # End of Service Version section, copy the line and stop updating
+                      updated_content.append(line)
+                      inside_service_version_section = False
+                  elif not inside_service_version_section:
+                      # Copy lines outside the Service Version section
+                      updated_content.append(line)
+
+              return updated_content
+
+          def main():
+              # Read the versions from releaseVersions.yaml
+              versions = read_versions()
+              # Generate the updated table content
+              table_content = generate_table(versions)
+
+              # Read the README.md file
+              with open("README.md", "r") as file:
+                  readme_content = file.readlines()
+
+              # Update the Service Version section in the README
+              updated_readme_content = update_service_version_section(readme_content, table_content)
+
+              # Write the updated README.md file
+              with open("README.md", "w") as file:
+                  file.writelines(updated_readme_content)
+
+          if __name__ == "__main__":
+              main()
+
+      - name: Display readme
+        run: cat README.md
