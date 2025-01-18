@@ -3,30 +3,38 @@ cart-service:
   beta: 0.1.0
   charlie: 0.1.0
   delta: 0.2.2
-  echo: 0.1.0
+  echo: 0.3.0
+  foxtrot: 0.3.0
 pay-service:
   alpha: 0.1.1
   beta: 0.1.0
   charlie: 0.1.1
   delta: 0.2.0
-  echo: 0.1.0
+  echo: 0.2.1
+  foxtrot: 0.2.1
 search-service:
   alpha: 0.1.0
   beta: 0.1.1
   charlie: 0.3.0
   delta: 0.3.0
-  echo: 0.1.0
+  echo: 0.3.0
+  foxtrot: 0.4.0
 notification-service:
   alpha: 0.1.0
   beta: 0.2.1
   charlie: 0.2.0
   delta: 0.2.0
-  echo: 0.1.0
+  echo: 0.2.1
+  foxtrot: 0.3.0
 db-service:
   alpha: 0.1.0
   beta: 0.1.0
   charlie: 0.2.0
   delta: 0.3.0
-  echo: 0.1.0
+  echo: 0.3.0
+  foxtrot: 0.5.1
 region-service:
   echo: 0.1.0
+  foxtrot: 0.2.0
+sbx-service:
+  foxtrot: 0.1.0

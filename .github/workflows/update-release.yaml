@@ -102,3 +102,4 @@ jobs:
         with:
           branch: chore/update-reademe
           branch-suffix: short-commit-hash
+          title: 'chore: update README'
