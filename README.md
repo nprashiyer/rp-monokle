@@ -12,3 +12,5 @@ This list the service versions corresponding to each release
 | search-service | 0.1.0 | 0.1.1 | 0.3.0 | 0.3.0 | 0.3.0 | 0.4.0 |
 ### Contributors
 This is owned by my-secret-company
+### Terms of Usage
+The is owned the my-secret-company and is requested not to distubute without permission of the owner.

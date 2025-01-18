@@ -32,7 +32,7 @@ db-service:
   charlie: 0.2.0
   delta: 0.3.0
   echo: 0.3.0
-  foxtrot: 0.5.1
+  foxtrot: 0.5.2
 region-service:
   echo: 0.1.0
   foxtrot: 0.2.0
