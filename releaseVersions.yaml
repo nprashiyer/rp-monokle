@@ -2,19 +2,24 @@ cart-service:
   alpha: 0.1.0
   beta: 0.1.0
   charlie: 0.1.0
+  delta: 0.2.0
 pay-service:
   alpha: 0.1.0
   beta: 0.1.0
   charlie: 0.1.1
+  delta: 0.2.0
 search-service:
   alpha: 0.1.0
   beta: 0.1.1
   charlie: 0.3.0
+  delta: 0.2.1
 notification-service:
   alpha: 0.1.0
   beta: 0.2.1
   charlie: 0.2.0
+  delta: 0.2.0
 db-service:
   alpha: 0.1.0
   beta: 0.1.0
   charlie: 0.2.0
+  delta: 0.3.0
