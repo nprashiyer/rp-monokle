@@ -1,0 +1,80 @@
+name: Update README with Service Versions
+
+on:
+  push:
+    branches:
+     - main
+    paths:
+      - 'npd/stg/values.yaml'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Update README
+        run: |
+          #!/usr/bin/env python3
+          import yaml
+          import re
+
+          with open('service.yaml', 'r') as f:
+            services_data = yaml.safe_load(f)
+
+          # Extract release name
+          release_name = services_data.get('release', 'unknown') 
+
+          # Extract service versions
+          service_versions = {}
+          for service, data in services_data['applications']['microservices']['banking']['values']['deployService'].items():
+              service_versions[service] = data['image']['tag']
+
+          # Update README.md
+          with open('README.md', 'r+') as f:
+              readme_content = f.read()
+
+              # Add new release column if it doesn't exist
+              if f'| {release_name} |' not in readme_content:
+                  readme_content = readme_content.replace('| - | - | - | - | - | - |\n', f'| - | - | - | - | - | - | {release_name} |\n')
+
+              # Find the start and end of the table
+              table_start = readme_content.find('| Service | alpha | beta |')
+              table_end = readme_content.find('| - | - | - |', table_start) + len('| - | - | - |\n')
+
+              # Generate updated table rows
+              new_table_rows = ""
+              for service, version in service_versions.items():
+                  # Find existing row for the service
+                  service_row = next((row for row in readme_content[table_start:table_end].splitlines() if f'| {service} |' in row), None)
+                  if service_row:
+                      # Update existing row with the new version
+                      new_row = re.sub(r'(?<=\|)\s*[^|\r\n]+\s*(?=\|)', version, service_row, count=1)  
+                      new_table_rows += new_row + '\n'
+                  else:
+                      # Add a new row for the service
+                      new_table_rows += f'| {service} | - | - | - | - | - | {version} |\n'
+
+              # Construct the updated README content
+              updated_readme = readme_content[:table_start] + readme_content[table_start:table_end] + new_table_rows + readme_content[table_end:]
+
+              # Write the updated content back to the file
+              f.seek(0)
+              f.write(updated_readme)
+              f.truncate()
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update-reademe
+          branch-suffix: short-commit-hash
+          title: 'chore: update README'
