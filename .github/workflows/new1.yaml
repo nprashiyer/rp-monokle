@@ -3,8 +3,6 @@ name: Checkbox
 on:
   repository_dispatch:
   workflow_dispatch:
-    branches:
-      - main
 
 jobs:
   deploy:
@@ -13,4 +11,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Hola
-        run: echo New1 !!
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: echo $BRANCH_NAME
