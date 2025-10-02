@@ -5,17 +5,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  from-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Hola
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: echo $BRANCH_NAME
+      
+      - name: List file
+        run: ls
+
+  from-main:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
         with:
           ref: 'main'
-      - name: Hola
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
-        run: echo $BRANCH_NAME
       
       - name: List file
         run: ls
