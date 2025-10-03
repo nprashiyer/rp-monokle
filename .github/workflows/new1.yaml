@@ -3,6 +3,11 @@ name: Checkbox
 on:
   repository_dispatch:
   workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        required: false
+        description: 'Ther version to deploy'
 
 jobs:
   from-tag:
@@ -13,7 +18,7 @@ jobs:
 
       - name: Hola
         env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+          BRANCH_NAME: ${{ inputs.version || github.head_ref || github.ref_name }} 
         run: echo $BRANCH_NAME
       
       - name: List file
