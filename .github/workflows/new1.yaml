@@ -9,6 +9,9 @@ on:
         required: false
         description: 'Ther version to deploy'
 
+concurrency:
+  group: deploy-staging
+
 jobs:
   from-tag:
     runs-on: ubuntu-latest
