@@ -25,7 +25,7 @@ jobs:
           ref: 'hola2'
       
       - name: List file
-        run: ls
+        run: sleep 100000
 
   from-main:
     runs-on: ubuntu-latest
