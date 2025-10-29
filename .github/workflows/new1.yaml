@@ -15,11 +15,14 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+      
+      - name: List file
+        run: ls
 
-      - name: Hola
-        env:
-          BRANCH_NAME: ${{ inputs.version || github.head_ref || github.ref_name }} 
-        run: echo $BRANCH_NAME
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          ref: 'hola2'
       
       - name: List file
         run: ls
